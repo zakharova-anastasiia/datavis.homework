@@ -208,7 +208,8 @@ loadData().then(data => {
     function updateLineChart(){
 
       if (selected != ''){
-
+        document.getElementById("label_p").style.visibility = "visible";
+        document.getElementById("p").style.visibility = "visible";
         let country = data.find(d => (d.country == selected));
         let years = Object.keys(country[lineParam]).slice(0, 221)
 
@@ -227,7 +228,6 @@ loadData().then(data => {
 
 
         lineChart.select('.line_data').remove();
-
         lineChart.append('g')
         .append('path')
         .data([dict_c])
